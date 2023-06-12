@@ -6,9 +6,11 @@ export default function Alert(props) {
         return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
     return (
-        // the props.alert && is used because the value of props.alert is initially null
-        props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong>{capitalize(props.alert.type)}!!</strong> {props.alert.msg}
+        <div style={{height: '40px'}}>
+            {/* // the props.alert && is used because the value of props.alert is initially null */}
+            {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+                <strong>{capitalize(props.alert.type)}!!</strong> {props.alert.msg}
+            </div>}
         </div>
     )
 }
